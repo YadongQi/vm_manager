@@ -1,6 +1,8 @@
 CiV VM Manager
 =============
 
+![Github Action](https://github.com/projectceladon/vm_manager/workflows/VM%20Manager%20CI/badge.svg)
+
 Overview
 --------
 
