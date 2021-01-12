@@ -40,11 +40,11 @@ int set_vtpm_bin_path(const char *bin_path)
 
 	len = strlen(bin_path) + 1;
 
-	vtpm.bin = malloc(strlen(bin_path));
+	vtpm.bin = calloc(strlen(bin_path), len);
 	if (!vtpm.bin)
 		return -1;
 
-	strncpy(vtpm.bin, bin_path, len);
+	strncpy(vtpm.bin, bin_path, MAX_PATH);
 
 	return 0;
 }
@@ -63,11 +63,11 @@ int set_vtpm_data_dir(const char *data_dir)
 
 	len = strlen(data_dir) + 1;
 
-	vtpm.data_dir = malloc(strlen(data_dir));
+	vtpm.data_dir = calloc(strlen(data_dir), len);
 	if (!vtpm.data_dir)
 		return -1;
 
-	strncpy(vtpm.data_dir,  data_dir, len);
+	strncpy(vtpm.data_dir, data_dir, MAX_PATH);
 
 	return 0;
 }

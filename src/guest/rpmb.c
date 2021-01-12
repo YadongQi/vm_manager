@@ -50,7 +50,7 @@ int set_rpmb_bin_path(const char *bin_path)
 		return -1;
 	}
 
-	strncpy(rpmb.bin, bin_path,len);
+	strncpy(rpmb.bin, bin_path, MAX_PATH);
 
 	return 0;
 }
@@ -68,11 +68,11 @@ int set_rpmb_data_dir(const char *data_dir)
 
 	len = strlen(data_dir) + 1;
 
-	rpmb.data_dir = malloc(strlen(data_dir));
+	rpmb.data_dir = calloc(strlen(data_dir), len);
 	if (!rpmb.data_dir)
 		return -1;
 
-	strncpy(rpmb.data_dir, data_dir,len);
+	strncpy(rpmb.data_dir, data_dir, MAX_PATH);
 
 	return 0;
 }
