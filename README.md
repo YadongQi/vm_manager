@@ -1,6 +1,9 @@
 CiV VM Manager
 =============
 
+![CI](https://github.com/YadongQi/vm_manager/blob/master/.github/workflows/ci.yml/badge.svg)
+![RELEASE](https://github.com/YadongQi/vm_manager/blob/master/.github/workflows/release.yml/badge.svg)
+
 Overview
 --------
 
