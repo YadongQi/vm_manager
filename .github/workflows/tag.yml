@@ -1,0 +1,25 @@
+name: VM Manager Tag
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  auto_tag:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: vm-manager
+
+      - uses: butlerlogic/action-autotag@stable
+        with:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          strategy: regex
+          root: "vm-manager/debian/changelog"
+          regex_pattern: "(vm-manager )\\(([0-9\.]{5,}([-\\+][\\w\\.0-9]+)?)(\\) stable)"
+          tag_prefix: "v"
+
